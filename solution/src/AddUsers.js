@@ -90,7 +90,7 @@ const AddUsers = () => {
     return () => clearTimeout(timeoutId);
   }, [name, location]);
 
-  const handleAdd = () => {
+  const onAdd = () => {
     if (!name || !isNameAvailable) {
       setNameValidationError(true);
       return;
@@ -204,7 +204,7 @@ const AddUsers = () => {
               <Button onClick={onClear} variant="outlined" color="error" sx={{ marginRight: 2, width: '100px' }}>
                 Clear
               </Button>
-              <Button onClick={handleAdd} variant="contained" color="primary" sx={{ width: '100px' }}>
+              <Button onClick={onAdd} variant="contained" color="primary" sx={{ width: '100px' }}>
                 Add
               </Button>
 
