@@ -36,8 +36,10 @@ const AddUsers = () => {
 
       // Check if the current value matches the ref value
       if (nameRef.current === newName) {
-        setIsNameAvailable(isValid && newName !== 'invalid name');
-        setNameValidationError(!isValid || newName === 'invalid name');
+        // value of the input field has NOT changed since the validation started
+        // so we need to re-validate.
+        setIsNameAvailable(isValid);
+        setNameValidationError(!isValid);
       }
     } catch (error) {
       console.error('Error validating name:', error);
