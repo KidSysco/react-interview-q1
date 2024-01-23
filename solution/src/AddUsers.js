@@ -111,7 +111,6 @@ const AddUsers = () => {
   };
 
   const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
     { field: 'name', headerName: 'Name', flex: 1 },
     { field: 'location', headerName: 'Location', flex: 1 },
   ];
@@ -153,9 +152,9 @@ const AddUsers = () => {
                   error={!isNameAvailable || nameValidationError}
                   helperText={
                     !isNameAvailable
-                      ? 'Name is already taken'
+                      ? 'This name has already been taken.' // Talk with PM about text change.
                       : nameValidationError
-                        ? 'Name is required'
+                        ? 'Name is required.' // Talk with PM about this rule.
                         : ''
                   }
                 />
@@ -184,6 +183,12 @@ const AddUsers = () => {
                 </FormControl>
               </div>
               <div className="location-error">
+                {/* 
+                  Talk with PM about this rule added here too.
+                  This is not a real, or good comment, but works for the demo.
+                  Several validation rules were added to create a better UX.
+                  These were not requirements so we should discuss with the PM.
+                */}
                 {locationValidationError && (
                   <span style={{ color: 'red', marginLeft: '8px' }}>
                     Please choose a location.
