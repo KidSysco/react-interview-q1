@@ -49,6 +49,9 @@ const AddUsers = () => {
   const onLocationChange = (event) => {
     const newLocation = event.target.value;
     setLocation(newLocation);
+
+    // Clear location validation error when a valid value is selected.
+    setLocationValidationError(false);
   };
 
   useEffect(() => {
@@ -164,7 +167,7 @@ const AddUsers = () => {
               <div className="custom-input-wrapper">
                 <label htmlFor="location">Location:</label>
 
-                <FormControl fullWidth size="small">
+                <FormControl fullWidth size="small" error={locationValidationError}>
 
                   <Select
                     displayEmpty
